@@ -8,12 +8,12 @@ import OurCompany from './pages/OurCompany';
 function App() {
   return (
     <>
-      <Home />
       <NavBar />
-      <Footer />
+      <Home />
+      {/* <Footer />
       <AboutUs />
       <OurCompany />
-      <NewsRoom />
+      <NewsRoom /> */}
     </>
   );
 }
