@@ -12,7 +12,7 @@ import {
 
 export default function NavBar() {
   return (
-    <NavigationMenu>
+    <NavigationMenu className='mb-8'>
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger>Item One</NavigationMenuTrigger>
