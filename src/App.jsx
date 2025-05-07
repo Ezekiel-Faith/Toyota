@@ -7,14 +7,15 @@ import OurCompany from './pages/OurCompany';
 
 function App() {
   return (
-    <>
-      <Home />
+    <div>
+      {/* <Home /> */}
       <NavBar />
-      <Footer />
+      {/* <Footer /> */}
       <AboutUs />
-      <OurCompany />
-      <NewsRoom />
-    </>
+      {/* <OurCompany /> */}
+      {/* <NewsRoom /> */}
+
+    </div>
   );
 }
 

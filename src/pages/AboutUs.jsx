@@ -1,5 +1,24 @@
+import Car from '@/about/Car';
+// import Choice from '@/about/Choice';
+import Footer from '@/about/Footer';
+import Header from '@/about/Header';
+import HeroSection from '@/about/HeroSection';
 import React from 'react';
 
-export default function AboutUs() {
-  return <div>Sampling</div>;
+
+const AboutUs = () => {
+  return (
+    <div>
+      <Header/>
+      <HeroSection/>
+      <Car/>
+      <Footer/>
+      {/* <Choice/> */}
+      
+    </div>
+  );
 }
+
+export default AboutUs;
+
+
