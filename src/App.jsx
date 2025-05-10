@@ -8,12 +8,7 @@ import OurCompany from './pages/OurCompany';
 function App() {
   return (
     <>
-      <NavBar />
       <Home />
-      {/* <Footer />
-      <AboutUs />
-      <OurCompany />
-      <NewsRoom /> */}
     </>
   );
 }
