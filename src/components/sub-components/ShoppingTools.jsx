@@ -77,29 +77,24 @@ export default function ShoppingTools() {
 
 function HeroBanner() {
   return (
-    <section className='relative w-full h-[60vh] sm:h-[70vh] md:h-[85vh] lg:h-[95vh] overflow-hidden mb-50'>
-      {/* Background Image */}
+    <section className='relative w-full h-[60vh] sm:h-[70vh] md:h-[85vh] lg:h-[95vh] overflow-hidden'>
       <img
         src='https://toyotacanada.scene7.com/is/image/toyotacanada/toyota-electrification-electric-vehicle-line-up-l?fit=constrain&wid=2200&qlt=90'
         alt='Toyota EV Lineup'
         className='absolute inset-0 w-full h-full object-cover object-center md:object-top'
       />
-      {/* Overlay */}
       <div className='absolute inset-0 bg-gradient-to-b from-black/50 to-black/20 z-10' />
       {/* Centered Content */}
       <div className='relative z-20 flex flex-col items-center justify-start pt-16 sm:pt-20 h-full text-white text-center px-4'>
-        {/* Toyota Logo - responsive width */}
         <img
           src='https://www.toyota.com/content/dam/toyota/homepage/fullbleed/horizontalbzlogo_beyond-zero.svg'
           alt='Toyota Logo'
           className='w-40 sm:w-48 md:w-56 lg:w-72'
         />
-        {/* Heading - responsive text size */}
         <h1 className='mt-4 font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl'>
           Drive change your way.
         </h1>
-        {/* Button - responsive padding and text size */}
-        <button className='group flex items-center justify-center border text-sm mt-6 px-7 py-2.5 bg-white text-black font-bold rounded-full hover:cursor-pointer'>
+        <button className='group flex items-center justify-center bg-white text-black text-sm mt-6 px-7 py-2.5  rounded-full capitalize font-bold cursor-pointer hover:bg-gray-300'>
           <span className='transition-transform duration-300 group-hover:-translate-x-1'>
             Explore Beyond Zero
           </span>
@@ -108,13 +103,12 @@ function HeroBanner() {
             className='ml-1 text-3xl transition-opacity duration-300 opacity-0 group-hover:opacity-100'
           />
         </button>
-        {/* Info button added here */}
+
         <div className='absolute bottom-4 right-3'>
           <button className='bg-black text-white text-[0.7rem] px-2.5 border  py-0.5 rounded-full shadow-lg hover:cursor-pointer'>
             Info
           </button>
         </div>
-        {/* End of Info button */}
       </div>
     </section>
   );
