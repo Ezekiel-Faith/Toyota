@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function NewsRoomCard() {
   return (
-    <div>NewsRoomCard</div>
+    <div>My name is Roland</div>
   )
 }
