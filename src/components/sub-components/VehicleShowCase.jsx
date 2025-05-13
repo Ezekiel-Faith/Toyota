@@ -57,27 +57,15 @@ export default function VehicleShowcase() {
     '#325a72',
   ];
 
-  let filteredVehicles = [];
+  const vehiclesMap = {
+    'Cars & Minivan': carsAndMinivan,
+    Trucks: trucks,
+    'Crossovers & SUVs': crossoverAndSuv,
+    Electrified: electrified,
+    'Upcoming Vehicles': upcomingVehicles,
+  };
 
-  switch (activeTab) {
-    case 'Cars & Minivan':
-      filteredVehicles = carsAndMinivan;
-      break;
-    case 'Trucks':
-      filteredVehicles = trucks;
-      break;
-    case 'Crossovers & SUVs':
-      filteredVehicles = crossoverAndSuv;
-      break;
-    case 'Electrified':
-      filteredVehicles = electrified;
-      break;
-    case 'Upcoming Vehicles':
-      filteredVehicles = upcomingVehicles;
-      break;
-    default:
-      filteredVehicles = [];
-  }
+  const filteredVehicles = vehiclesMap[activeTab] || [];
 
   return (
     <div className='pt-12'>
@@ -100,7 +88,7 @@ export default function VehicleShowcase() {
               {tab}
             </button>
             {activeTab === tab && (
-              <div className='absolute bottom-[-1px] left-1/2 -translate-x-1/2 h-0.5 w-full bg-gray-900'></div>
+              <div className='absolute -bottom-0.5 left-0 w-full h-0.5 bg-gray-900'></div>
             )}
           </div>
         ))}
@@ -147,7 +135,7 @@ export default function VehicleShowcase() {
 
       <CardCarousel totalCount={filteredVehicles.length}>
         {filteredVehicles.map((vehicle) => (
-          <div key={vehicle.id} className='flex-shrink-0'>
+          <div key={`vehicle-${vehicle.id}`} className='flex-shrink-0'>
             <VehicleCard
               vehicle={vehicle}
               bgColor={vehicleColors[vehicle.id]}

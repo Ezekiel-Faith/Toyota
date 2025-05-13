@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+// import React, { useRef, useState, useMemo } from 'react';
 import { FaChevronDown, FaChevronRight } from 'react-icons/fa';
 import DiscoverCard from './DiscoverCard';
 import {
@@ -7,6 +7,7 @@ import {
   offersTab,
   vehiclesTab,
 } from '@/data/discovery';
+import { useMemo, useRef, useState } from 'react';
 
 export default function DiscoverToyota() {
   const [activeTab, setActiveTab] = useState('Featured stories');
@@ -19,35 +20,35 @@ export default function DiscoverToyota() {
     'Offers & Services',
   ];
 
-  let filteredData = [];
+  // Memoize filtered data based on the activeTab
+  const filteredData = useMemo(() => {
+    const tabData = {
+      'Featured stories': featuredTab,
+      'Vehicles & Technology': vehiclesTab,
+      'Offers & Services': offersTab,
+    };
+    return tabData[activeTab] || [];
+  }, [activeTab]);
 
-  switch (activeTab) {
-    case 'Featured stories':
-      filteredData = featuredTab;
-      break;
-    case 'Vehicles & Technology':
-      filteredData = vehiclesTab;
-      break;
-    case 'Offers & Services':
-      filteredData = offersTab;
-      break;
-    default:
-      filteredData = [];
-  }
+  // Helper function for tab button classes
+  const getTabButtonClasses = (tab) => {
+    return `px-4 py-2 mx-2 font-semibold text-sm cursor-pointer ${
+      activeTab === tab ? 'text-gray-900' : 'text-gray-600 hover:text-gray-800'
+    }`;
+  };
+
   return (
     <div className='pt-5'>
       <h2 className='sm:mt-1 md:my-8 lg:my-10 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center text-gray-800'>
         Discover Toyota
       </h2>
+
+      {/* Tab Navigation for Desktop */}
       <div className='hidden md:flex justify-center mb-6'>
         {tabItems.map((tab) => (
           <div key={tab} className='relative border-b-2 border-gray-400'>
             <button
-              className={`px-4 py-2 mx-2 font-semibold text-sm cursor-pointer ${
-                activeTab === tab
-                  ? 'text-gray-900'
-                  : 'text-gray-600 hover:text-gray-800'
-              }`}
+              className={getTabButtonClasses(tab)}
               onClick={() => setActiveTab(tab)}
             >
               {tab}
@@ -58,6 +59,8 @@ export default function DiscoverToyota() {
           </div>
         ))}
       </div>
+
+      {/* Dropdown for Mobile */}
       <div className='mt-6 md:hidden flex justify-center mb-6 font-semibold text-black'>
         <div ref={dropdownRef} className='relative'>
           <button
@@ -95,10 +98,14 @@ export default function DiscoverToyota() {
           )}
         </div>
       </div>
+
+      {/* Discover Card Component */}
       <DiscoverCard activeTab={activeTab} discovers={discovers} />
+
+      {/* Display filtered data */}
       <div
         className='grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 md:gap-8 lg:gap-10
- px-5 md:px-8 xl:px-16 pt-5 text-white'
+        px-5 md:px-8 xl:px-16 pt-5 text-white'
       >
         {filteredData.map((item, index) => (
           <div
