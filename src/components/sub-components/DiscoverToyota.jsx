@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { FaChevronDown } from 'react-icons/fa';
+import { FaChevronDown, FaChevronRight } from 'react-icons/fa';
 import DiscoverCard from './DiscoverCard';
 import {
   discovers,
@@ -96,19 +96,44 @@ export default function DiscoverToyota() {
         </div>
       </div>
       <DiscoverCard activeTab={activeTab} discovers={discovers} />
-      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-5 md:px-8 xl:px-16 pt-4 text-white'>
+      <div
+        className='grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 md:gap-8 lg:gap-10
+ px-5 md:px-8 xl:px-16 pt-5 text-white'
+      >
         {filteredData.map((item, index) => (
-          <div key={index} className='bg-white p-6 rounded-md shadow-md'>
-            <img
-              src={item.image}
-              alt={item.title}
-              className='w-full h-48 object-cover rounded-md mb-4'
-            />
-            <h3 className='text-xl font-semibold mb-2'>{item.title}</h3>
-            <p className='text-gray-600 mb-4'>{item.description}</p>
-            <button className='text-blue-500 hover:underline'>
-              {item.action}
-            </button>
+          <div
+            key={index}
+            className='group relative rounded-md overflow-hidden min-h-[30rem] md:min-h-[22rem] lg:min-h-[30rem] xl:min-h-[35rem] flex items-end p-4 hover:cursor-pointer'
+            style={{
+              backgroundImage: `url(${item.image})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          >
+            {/* Overlay */}
+            <div className='absolute inset-0 z-10'>
+              <div className='absolute w-full h-full bottom-0 bg-gradient-to-t from-black opacity-100'></div>
+            </div>
+
+            {/* Content */}
+            <div className='relative z-10 transition-all duration-500 ease-in-out'>
+              <h4 className='text-sm uppercase tracking-wide mb-2'>
+                {item.category}
+              </h4>
+              <h3 className='text-xl font-semibold mb-2'>{item.title}</h3>
+              <p className='text-gray-200 mb-4 opacity-0 max-h-0 translate-y-4 group-hover:translate-y-0 overflow-hidden group-hover:opacity-100 group-hover:max-h-40 transition-all duration-500 ease-in-out'>
+                {item.description}
+              </p>
+              <button className='group/button flex items-center justify-center bg-white text-black text-sm mt-6 px-7 py-2.5 rounded-full capitalize font-bold cursor-pointer hover:bg-gray-300'>
+                <span className='transition-transform duration-300 ease-in-out group-hover/button:-translate-x-1'>
+                  {item.action}
+                </span>
+                <FaChevronRight
+                  size={10}
+                  className='ml-1 text-3xl transition-opacity duration-300 ease-in-out opacity-0 group-hover/button:opacity-100'
+                />
+              </button>
+            </div>
           </div>
         ))}
       </div>

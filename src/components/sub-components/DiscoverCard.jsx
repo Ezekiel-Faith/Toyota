@@ -51,23 +51,3 @@ export default function DiscoverCard({ activeTab, discovers }) {
     </div>
   );
 }
-
-function CardItem({ item }) {
-  return (
-    <div className='relative rounded-xl overflow-hidden shadow-md group'>
-      <img
-        src={item.image}
-        alt={item.title}
-        className='w-full h-72 object-cover transition duration-300 group-hover:scale-105'
-      />
-      <div className='absolute inset-0 bg-gradient-to-t from-black via-gray-800 to-transparent opacity-60' />
-      <div className='absolute bottom-0 left-0 p-6 text-white'>
-        <p className='text-xs font-semibold uppercase mb-2'>{item.category}</p>
-        <h3 className='text-lg font-bold leading-snug'>{item.title}</h3>
-        <button className='mt-4 px-6 py-3 bg-white text-black text-sm font-semibold rounded-full hover:bg-gray-100 transition'>
-          {item.action}
-        </button>
-      </div>
-    </div>
-  );
-}

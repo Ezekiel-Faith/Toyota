@@ -48,7 +48,7 @@ export const featuredTab = [
     title: 'An Easier Way to Buy Your Next Toyota',
     description:
       'SmartPath helps you find your Toyota, customize terms and finalize your purchase—all online.',
-    action: 'Shop Now',
+    action: 'Learn More',
   },
   {
     category: 'offers & services',
@@ -56,7 +56,7 @@ export const featuredTab = [
       'https://www.bestcards.com/wp-content/uploads/2020/10/Toyota-Rewards-Visa%C2%AE.png',
     title: 'Toyota Rewards Visa Signature®',
     description: 'Earn more with Toyota Rewards Visa Signature® Credit Card.',
-    action: 'Shop Now',
+    action: 'Learn More',
   },
 ];
 
@@ -76,7 +76,7 @@ export const vehiclesTab = [
     title: 'Safety Recall Information',
     description:
       'Get information on open safety recalls and service campaigns.',
-    action: 'Get Connected',
+    action: 'Get More Info',
   },
   {
     category: 'featured stories',
@@ -85,7 +85,7 @@ export const vehiclesTab = [
     title: 'Toyota Cares',
     description:
       'Every Toyota comes with a peace-of-mind two years of no cost maintenance and Roadside Assistance. *',
-    action: 'Shop Now',
+    action: 'See Details',
   },
 ];
 
