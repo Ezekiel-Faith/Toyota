@@ -440,7 +440,7 @@ export const carsAndMinivan = [
     name: 'GR Supra',
     description: 'Outpace your limits.',
     image:
-      'https://tmna.aemassets.toyota.com/is/image/toyota/toyota/vehicles/2026/grsupra2/mlp/hotspots/SUP_MY26_0001_V001.png?fmt=png-alpha&fit=crop&wid=1920https://tmna.aemassets.toyota.com/is/image/toyota/toyota/vehicles/2026/grsupra2/mlp/hotspots/SUP_MY26_0001_V001.png?fmt=png-alpha&fit=crop&wid=1920',
+      'https://tmna.aemassets.toyota.com/is/image/toyota/toyota/vehicles/2026/grsupra2/mlp/hotspots/SUP_MY26_0001_V001.png?fmt=png-alpha&fit=crop&wid=1920',
     amount: '$56,900',
     mpg: '26/29',
     text: 'Starting MSRP*',

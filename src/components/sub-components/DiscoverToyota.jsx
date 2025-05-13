@@ -1,17 +1,39 @@
 import React, { useRef, useState } from 'react';
 import { FaChevronDown } from 'react-icons/fa';
 import DiscoverCard from './DiscoverCard';
-import { discovers } from '@/data/discovery';
+import {
+  discovers,
+  featuredTab,
+  offersTab,
+  vehiclesTab,
+} from '@/data/discovery';
 
 export default function DiscoverToyota() {
   const [activeTab, setActiveTab] = useState('Featured stories');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
+
   const tabItems = [
     'Featured stories',
     'Vehicles & Technology',
     'Offers & Services',
   ];
+
+  let filteredData = [];
+
+  switch (activeTab) {
+    case 'Featured stories':
+      filteredData = featuredTab;
+      break;
+    case 'Vehicles & Technology':
+      filteredData = vehiclesTab;
+      break;
+    case 'Offers & Services':
+      filteredData = offersTab;
+      break;
+    default:
+      filteredData = [];
+  }
   return (
     <div className='pt-5'>
       <h2 className='sm:mt-1 md:my-8 lg:my-10 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center text-gray-800'>
@@ -73,8 +95,23 @@ export default function DiscoverToyota() {
           )}
         </div>
       </div>
-      <DiscoverCard activeTab={activeTab} discovers={discovers} />{' '}
-      {/* * passing props */}
+      <DiscoverCard activeTab={activeTab} discovers={discovers} />
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-5 md:px-8 xl:px-16 pt-4 text-white'>
+        {filteredData.map((item, index) => (
+          <div key={index} className='bg-white p-6 rounded-md shadow-md'>
+            <img
+              src={item.image}
+              alt={item.title}
+              className='w-full h-48 object-cover rounded-md mb-4'
+            />
+            <h3 className='text-xl font-semibold mb-2'>{item.title}</h3>
+            <p className='text-gray-600 mb-4'>{item.description}</p>
+            <button className='text-blue-500 hover:underline'>
+              {item.action}
+            </button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

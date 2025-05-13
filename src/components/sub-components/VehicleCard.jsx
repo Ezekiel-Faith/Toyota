@@ -13,6 +13,7 @@ export default function VehicleCard({ vehicle, bgColor }) {
             alt={vehicle.name}
             className='w-full h-full object-cover'
           />
+
           {vehicle.badge && (
             <span className='absolute top-3 left-3 bg-black text-white py-1 px-3 text-xs rounded-md z-20'>
               {vehicle.badge}
