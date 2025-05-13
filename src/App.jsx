@@ -14,7 +14,6 @@ function App() {
       <AboutUs />
       {/* <OurCompany /> */}
       {/* <NewsRoom /> */}
-
     </div>
   );
 }
