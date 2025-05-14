@@ -8,8 +8,8 @@ import OurCompany from './pages/OurCompany';
 function App() {
   return (
     <>
-      <Home />
       <NavBar />
+      <Home />
     </>
   );
 }
