@@ -7,15 +7,10 @@ import OurCompany from './pages/OurCompany';
 
 function App() {
   return (
-<<<<<<< HEAD
     <>
       <Home />
-    </>
-=======
-    <div>
       <NavBar />
-    </div>
->>>>>>> about-us
+    </>
   );
 }
 
