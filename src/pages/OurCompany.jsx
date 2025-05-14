@@ -6,7 +6,8 @@ import WorkingAtToyota from "../components/WorkingAtToyota";
 import Manufacturing from "../components/Manufacture";
 import Box from "../components/Box";
 import StickyButton from "../components/StickyButton";
-import Check from "../components/Check";
+import Footer from "./Footer";
+
 
 
 
@@ -46,7 +47,7 @@ const OurCompany = ()=>{
       <ToyotaEffect Hover={handleMouseEnter} Leave={handleMouseLeave}/>   
       <WorkingAtToyota Hover={handleMouseEnterWT} Leave={handleMouseLeaveWT}/>
       <Manufacturing Hover={handleMouseEnterMI} Leave={handleMouseLeaveMI}/>
-      <Check/>
+      
      
    
    </>
