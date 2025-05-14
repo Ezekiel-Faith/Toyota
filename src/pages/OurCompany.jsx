@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import Slides from '../components/Hero';
 import { useState } from 'react';
 import HeroSection from '../components/Hero';
@@ -6,6 +7,18 @@ import WorkingAtToyota from '../components/WorkingAtToyota';
 import Manufacturing from '../components/Manufacture';
 import Box from '../components/Box';
 import StickyButton from '../components/StickyButton';
+=======
+import Slides from "../components/Hero";
+import { useEffect, useRef, useState } from "react";
+import HeroSection from '../components/Hero'
+import ToyotaEffect from "../components/ToyotaEffect";
+import WorkingAtToyota from "../components/WorkingAtToyota";
+import Manufacturing from "../components/Manufacture";
+import Box from "../components/Box";
+import StickyButton from "../components/StickyButton";
+import Footer from "./Footer";
+
+>>>>>>> df8a05dbf8056baf8e0c87f03c3d9c1a1fe83cea
 
 const OurCompany = () => {
   const [toyotaIsHovered, setToyotaIsHovered] = useState(false);
@@ -63,11 +76,21 @@ const OurCompany = () => {
           }
         />
       </div>
+<<<<<<< HEAD
       <ToyotaEffect Hover={handleMouseEnter} Leave={handleMouseLeave} />
       <WorkingAtToyota Hover={handleMouseEnterWT} Leave={handleMouseLeaveWT} />
       <Manufacturing Hover={handleMouseEnterMI} Leave={handleMouseLeaveMI} />
     </>
   );
 };
+=======
+      <ToyotaEffect Hover={handleMouseEnter} Leave={handleMouseLeave}/>   
+      <WorkingAtToyota Hover={handleMouseEnterWT} Leave={handleMouseLeaveWT}/>
+      <Manufacturing Hover={handleMouseEnterMI} Leave={handleMouseLeaveMI}/>
+      
+     
+   
+   </>
+>>>>>>> df8a05dbf8056baf8e0c87f03c3d9c1a1fe83cea
 
 export default OurCompany;
