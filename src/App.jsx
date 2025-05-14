@@ -1,10 +1,11 @@
 import './App.css';
+import Footer from './pages/Footer';
 import OurCompany from './pages/OurCompany';
 
 function App() {
   return (
     <div>
-      <OurCompany />
+      <Footer />
     </div>
   );
 }
