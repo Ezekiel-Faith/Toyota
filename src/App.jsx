@@ -1,23 +1,12 @@
-import { useState } from 'react'
-import './App.css'
-import OurCompany from './pages/OurCompany'
-
-
+import './App.css';
+import OurCompany from './pages/OurCompany';
 
 function App() {
-
- 
   return (
     <div>
-
-      
-     <OurCompany/>
-      
-      
+      <OurCompany />
     </div>
-  )
+  );
 }
 
-export default App
-
-
+export default App;
