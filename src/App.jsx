@@ -7,7 +7,7 @@ import OurCompany from './pages/OurCompany';
 function App() {
   return (
     <div>
-      <AboutUs/>
+      <AboutUs />
     </div>
   );
 }
