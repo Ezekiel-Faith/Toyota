@@ -97,18 +97,23 @@ const Footer = () => {
   const [screenSize, setScreenSize] = useState(false);
   useEffect(() => {
     const handleWidth = () => {
-      setScreenSize(window.innerWidth);
+      if(window.innerWidth > 1024){
+        setShowLgFooter(true)
+      }else{
+        setShowLgFooter(false)
+      }
     };
 
-    window.addEventListener("resize", handleWidth);
+
   });
 
-  const handleClick = () => {};
+  const [showLgFooter, setShowLgFooter] = useState()
+
 
   return (
-    <div className="bg-[#0000000b] py-[30px]">
+    <div className="bg-[#0000000b] py-[30px] ">
       <div className="md:flex sm:justify-center sm:items-center gap-8 font-bold m:py-12 flex-col 2xl:flex-row sm:mb-[30px]">
-        <div className="flex-col sm:flwx-row flex sm:justify-center sm:items-center gap-[10px] sm:p-0 p-[10px]">
+        <div className="flex-col sm:flwx-row flex sm:justify-center sm:items-center gap-[10px] sm:p-0 p-[10px] 2xl:flex-row">
           <p className="cursor-pointer font-medium hover:underline">
             Accessibility
           </p>
@@ -167,8 +172,7 @@ const Footer = () => {
           </a>
         </div>
       </div>
-      {screenSize >= 1024 ? (
-        <footer>
+        <footer className="hidden lg:block">
           <div className="grid grid-cols-3 gap-12 md:flex justify-around items-start pb-24 border-b-1 mx-12 border-[#0000001e]">
             <div>
               <h2 className={styles.about}>SHOPPING TOOLS</h2>
@@ -222,13 +226,12 @@ const Footer = () => {
             </div>
           </div>
         </footer>
-      ) : (
         <Accordion
           type="single"
           collapsible
           value={isOpen}
           onValueChange={setIsOpen}
-          className="w-full border-0"
+          className="w-full border-0 block lg:hidden"
         >
           <AccordionItem value="item-1" className="px-[15px]">
             <AccordionTrigger className="flex justify-between border-none text-de items-center font-bold text-sm cursor-pointer [&>svg]:hidden ">
@@ -340,8 +343,7 @@ const Footer = () => {
             <div className="w-[100%] h-[2px] bg-[#ededed]"></div>
           </AccordionItem>
         </Accordion>
-      )}
-      <div className="flex flex-col space-y-8 mt-10 pb-20 sm:items-center p-[10px]">
+      <div className="flex flex-col space-y-8 mt-10 pb-20 sm:items-center p-[10px] ">
         <div className="w-[200px] h-[70px] flex justify-center items-center">
             <img src={logo} alt="" className="object-cover w-[300px] mr-[85px]"/>
         </div>
