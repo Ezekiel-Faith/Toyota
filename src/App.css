@@ -1,11 +1,11 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 @font-face {
   font-family: myFont;
   src: url(./../public/HelveticaNeueLight.otf);
 }
 
-*{
-  box-sizing: border-box;
+* {
+  /* box-sizing: border-box; */
 }
 
 .manufactures * {
