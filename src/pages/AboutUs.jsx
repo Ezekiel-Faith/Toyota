@@ -1,5 +1,16 @@
+import Car from '@/about/Car';
+import Header from '@/about/Header';
+import HeroSection from '@/about/HeroSection';
 import React from 'react';
 
-export default function AboutUs() {
-  return <div>AboutUs</div>;
-}
+const AboutUs = () => {
+  return (
+    <div className='overflow-hidden'>
+      <Header />
+      <HeroSection />
+      <Car />
+    </div>
+  );
+};
+
+export default AboutUs;
