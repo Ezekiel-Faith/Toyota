@@ -29,7 +29,7 @@ const NavBar = () => {
   ];
 
   return (
-    <nav className='w-full bg-white lg:border-b-[0.5px]  p-4 text-black text-lg font-semibold fixed top-0 right-0 z-50'>
+    <nav className='w-full bg-white lg:border-b-[0.5px]  p-4 text-black text-lg font-semibold top-0 right-0 z-50'>
       <div className='flex justify-between items-center mx-auto container  w-full'>
         <img src={logo} alt='' width={200} />
 
