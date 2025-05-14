@@ -1,15 +1,20 @@
+import { Routes, Route } from 'react-router-dom';
 import AboutUs from './pages/AboutUs';
-import Footer from './pages/Footer';
+import Newsroom from './pages/Newsroom';
+import OurCompany from './pages/OurCompany';
 import Home from './pages/Home';
 import NavBar from './pages/NavBar';
-import NewsRoom from './pages/NewsRoom';
-import OurCompany from './pages/OurCompany';
 
 function App() {
   return (
     <>
       <NavBar />
-      <Home />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/about-us' element={<AboutUs />} />
+        <Route path='/newsroom' element={<Newsroom />} />
+        <Route path='/our-company' element={<OurCompany />} />
+      </Routes>
     </>
   );
 }

@@ -3,6 +3,7 @@ import logo from '../assets/toyota-logo.svg';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { RiCloseLargeFill } from 'react-icons/ri';
 import { ChevronDownIcon, ChevronUpIcon } from 'lucide-react';
+import { Link } from 'react-router-dom';
 // import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/solid";
 
 const styles = {
@@ -22,10 +23,10 @@ const NavBar = () => {
   };
 
   const navs = [
-    { id: 1, text: 'Home' },
-    { id: 2, text: 'About Us' },
-    { id: 3, text: 'Our Company' },
-    { id: 4, text: 'Newsroom' },
+    { id: 1, text: 'Home', path: '/' },
+    { id: 2, text: 'About Us', path: '/about-us' },
+    { id: 3, text: 'Our Company', path: '/our-company' },
+    { id: 4, text: 'Newsroom', path: '/newsroom' },
   ];
 
   return (
@@ -36,12 +37,12 @@ const NavBar = () => {
         <ul className='lg:flex space-x-12 hidden'>
           {navs.map((item) => (
             <li className={styles.link} key={item.id}>
-              <button
-                onClick={() => toggleDropdown(item.id)}
+              <Link
+                to={item.path}
                 className={`flex items-center justify-center gap-2 hover:cursor-pointer`}
               >
                 {item.text}
-              </button>
+              </Link>
             </li>
           ))}
         </ul>
@@ -66,7 +67,7 @@ const NavBar = () => {
               className={`${styles.link} block pb-10  hover:border-none rounded-none border-b-[0.1px]  hover:text-[#a9a9a9] w-full`}
               key={item.id}
             >
-              {item.text}
+              <Link to={item.path}> {item.text} </Link>
             </li>
           ))}
         </ul>
