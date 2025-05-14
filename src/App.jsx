@@ -4,6 +4,7 @@ import Newsroom from './pages/Newsroom';
 import OurCompany from './pages/OurCompany';
 import Home from './pages/Home';
 import NavBar from './pages/NavBar';
+import NewsRoom from './pages/Newsroom';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about-us' element={<AboutUs />} />
-        <Route path='/newsroom' element={<Newsroom />} />
+        <Route path='/newsroom' element={<NewsRoom />} />
         <Route path='/our-company' element={<OurCompany />} />
       </Routes>
     </>
